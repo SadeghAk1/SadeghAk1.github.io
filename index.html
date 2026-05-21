@@ -5,7 +5,8 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
+<meta
+name="viewport"
 content="width=device-width, initial-scale=1.0">
 
 <title>
@@ -56,9 +57,9 @@ color:var(--text);
 
 }
 
-/* ======================
+/* =======================
 HEADER
-====================== */
+======================= */
 
 .header{
 
@@ -68,7 +69,7 @@ top:0;
 left:0;
 right:0;
 
-height:62px;
+height:64px;
 
 background:
 rgba(24,49,83,.92);
@@ -79,10 +80,9 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-weight:800;
-font-size:1rem;
-
 color:white;
+
+font-weight:800;
 
 z-index:1000;
 
@@ -91,9 +91,142 @@ box-shadow:
 
 }
 
-/* ======================
-LAYOUT
-====================== */
+.menu-btn{
+
+position:absolute;
+
+right:14px;
+
+width:42px;
+height:42px;
+
+border:none;
+
+border-radius:14px;
+
+background:
+rgba(255,255,255,.12);
+
+color:white;
+
+font-size:1.2rem;
+
+cursor:pointer;
+
+}
+
+/* =======================
+SIDEBAR
+======================= */
+
+#sidebar{
+
+position:fixed;
+
+top:0;
+right:-320px;
+
+width:280px;
+height:100vh;
+
+background:white;
+
+padding:24px;
+
+transition:.3s;
+
+z-index:2000;
+
+box-shadow:
+-10px 0 40px rgba(0,0,0,.12);
+
+border-radius:
+32px 0 0 32px;
+
+overflow:auto;
+
+}
+
+#sidebar.show{
+
+right:0;
+
+}
+
+.menu-title{
+
+font-size:1.3rem;
+font-weight:800;
+
+margin-bottom:22px;
+
+}
+
+.menu-item{
+
+width:100%;
+
+padding:16px;
+
+margin-top:12px;
+
+border:none;
+
+border-radius:20px;
+
+background:#eef4ff;
+
+font-weight:700;
+
+cursor:pointer;
+
+font-size:.95rem;
+
+transition:.2s;
+
+text-align:right;
+
+}
+
+.menu-item:hover{
+
+transform:translateX(-4px);
+
+background:#dde9ff;
+
+}
+
+#overlay{
+
+position:fixed;
+inset:0;
+
+background:
+rgba(0,0,0,.45);
+
+backdrop-filter:blur(4px);
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.25s;
+
+z-index:1500;
+
+}
+
+#overlay.show{
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+/* =======================
+CONTAINER
+======================= */
 
 .container{
 
@@ -104,7 +237,7 @@ margin:auto;
 
 .card{
 
-background:var(--card);
+background:white;
 
 border-radius:34px;
 
@@ -113,14 +246,11 @@ padding:18px;
 box-shadow:
 0 12px 40px rgba(0,0,0,.06);
 
-border:
-1px solid rgba(255,255,255,.6);
-
 }
 
-/* ======================
+/* =======================
 SENTENCE
-====================== */
+======================= */
 
 .sentence-box{
 
@@ -131,16 +261,11 @@ linear-gradient(
 #f8fbff
 );
 
-padding:22px;
+padding:24px;
 
 border-radius:28px;
 
-margin-bottom:16px;
-
-border:
-1px solid #dfe9f8;
-
-min-height:160px;
+min-height:180px;
 
 display:flex;
 align-items:center;
@@ -150,42 +275,34 @@ text-align:center;
 
 line-height:2;
 
-font-size:1.35rem;
+font-size:1.3rem;
 
 font-weight:800;
 
-color:#163254;
+margin-bottom:16px;
 
 }
 
-/* ======================
+/* =======================
 INPUT
-====================== */
-
-.input-wrapper{
-
-margin-bottom:14px;
-
-}
+======================= */
 
 .user-input{
 
 width:100%;
 
-padding:16px 18px;
+padding:16px;
 
 border-radius:22px;
 
 border:
 2px solid var(--border);
 
-background:white;
-
 font-size:1rem;
 
 outline:none;
 
-transition:.2s;
+margin-bottom:16px;
 
 }
 
@@ -193,15 +310,11 @@ transition:.2s;
 
 border-color:var(--primary);
 
-box-shadow:
-0 0 0 5px
-rgba(79,70,229,.08);
-
 }
 
-/* ======================
+/* =======================
 BUTTONS
-====================== */
+======================= */
 
 .action-section{
 
@@ -223,11 +336,13 @@ gap:12px;
 
 border:none;
 
+border-radius:22px;
+
 cursor:pointer;
 
-border-radius:24px;
-
 font-family:inherit;
+
+font-weight:800;
 
 transition:.2s;
 
@@ -238,8 +353,6 @@ transition:.2s;
 transform:scale(.97);
 
 }
-
-/* check */
 
 .btn-check{
 
@@ -252,19 +365,9 @@ var(--green2)
 
 padding:16px;
 
-font-size:.95rem;
-
-font-weight:800;
-
 color:white;
 
-box-shadow:
-0 10px 24px
-rgba(22,163,74,.22);
-
 }
-
-/* reset */
 
 .btn-reset{
 
@@ -272,26 +375,12 @@ background:white;
 
 padding:16px;
 
-font-size:.95rem;
-
-font-weight:800;
-
-color:#284567;
-
 border:
 1.5px solid var(--border);
 
-box-shadow:
-0 5px 14px
-rgba(0,0,0,.04);
-
 }
 
-/* generate */
-
 .btn-generate{
-
-width:100%;
 
 background:
 linear-gradient(
@@ -302,159 +391,262 @@ var(--primary)
 
 padding:18px;
 
-display:flex;
-align-items:center;
-gap:14px;
-
 color:white;
 
-position:relative;
-
-overflow:hidden;
-
-box-shadow:
-0 16px 34px
-rgba(79,70,229,.28);
-
-}
-
-.btn-generate::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.18),
-transparent
-);
-
-transform:translateX(-100%);
-
-transition:.8s;
-
-}
-
-.btn-generate:hover::before{
-
-transform:translateX(100%);
-
-}
-
-.generate-icon{
-
-width:54px;
-height:54px;
-
-border-radius:18px;
-
-background:
-rgba(255,255,255,.15);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:1.5rem;
-
-flex-shrink:0;
-
-backdrop-filter:blur(10px);
-
-}
-
-.generate-content{
-
-display:flex;
-flex-direction:column;
-
-align-items:flex-start;
-
-text-align:right;
-
-}
-
-.generate-title{
-
 font-size:1rem;
-font-weight:800;
 
 }
 
-.generate-subtitle{
-
-font-size:.75rem;
-
-opacity:.9;
-
-margin-top:4px;
-
-line-height:1.6;
-
-}
-
-/* ======================
+/* =======================
 RESULT
-====================== */
+======================= */
 
 .result{
 
-margin-top:14px;
+margin-top:16px;
 
-padding:14px;
+padding:16px;
 
 border-radius:22px;
 
-background:#f3f7ff;
-
-font-weight:700;
+background:#eef4ff;
 
 text-align:center;
 
+font-weight:700;
+
 line-height:1.8;
-
-min-height:60px;
-
-display:flex;
-align-items:center;
-justify-content:center;
 
 }
 
-/* ======================
+/* =======================
 INFO
-====================== */
+======================= */
 
 .info{
 
-margin-top:14px;
+margin-top:16px;
 
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-background:#edf4ff;
+background:#eef4ff;
 
 padding:14px;
 
 border-radius:22px;
 
-font-size:.9rem;
+display:flex;
+justify-content:space-between;
 
 font-weight:700;
 
-color:#27476e;
+}
+
+/* =======================
+PAGES
+======================= */
+
+.page{
+
+display:none;
 
 }
 
-/* ======================
+.page.active{
+
+display:block;
+
+}
+
+/* =======================
+MANAGER
+======================= */
+
+.page-title{
+
+font-size:1.3rem;
+
+font-weight:800;
+
+margin-bottom:16px;
+
+}
+
+.search-input{
+
+width:100%;
+
+padding:14px;
+
+border-radius:20px;
+
+border:
+1.5px solid var(--border);
+
+margin-bottom:14px;
+
+font-size:1rem;
+
+}
+
+.sentence-item{
+
+background:#f8fbff;
+
+padding:14px;
+
+border-radius:20px;
+
+margin-bottom:12px;
+
+}
+
+.sentence-text{
+
+line-height:1.9;
+
+margin-bottom:10px;
+
+}
+
+.sentence-actions{
+
+display:flex;
+gap:10px;
+
+}
+
+.action-btn{
+
+flex:1;
+
+padding:10px;
+
+border:none;
+
+border-radius:16px;
+
+cursor:pointer;
+
+font-weight:700;
+
+}
+
+.edit-btn{
+
+background:#dbeafe;
+
+}
+
+.delete-btn{
+
+background:#fee2e2;
+
+}
+
+.add-box{
+
+display:flex;
+gap:10px;
+
+margin-bottom:18px;
+
+}
+
+.add-box input{
+
+flex:1;
+
+padding:14px;
+
+border-radius:20px;
+
+border:
+1.5px solid var(--border);
+
+}
+
+.add-box button{
+
+padding:14px 20px;
+
+border:none;
+
+border-radius:20px;
+
+background:var(--primary);
+
+color:white;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+/* =======================
+SETTINGS
+======================= */
+
+.setting-box{
+
+background:#f8fbff;
+
+padding:18px;
+
+border-radius:24px;
+
+}
+
+.setting-box input{
+
+width:100%;
+
+padding:16px;
+
+border-radius:20px;
+
+border:
+1.5px solid var(--border);
+
+margin-top:14px;
+margin-bottom:14px;
+
+font-size:1rem;
+
+}
+
+.setting-box button{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:20px;
+
+background:var(--primary);
+
+color:white;
+
+font-weight:800;
+
+cursor:pointer;
+
+}
+
+/* =======================
+HIDDEN
+======================= */
+
+.hidden{
+
+display:none;
+
+}
+
+/* =======================
 MOBILE
-====================== */
+======================= */
 
 @media(max-width:520px){
 
@@ -466,9 +658,7 @@ grid-template-columns:1fr;
 
 .sentence-box{
 
-font-size:1.15rem;
-
-padding:18px;
+font-size:1.1rem;
 
 }
 
@@ -480,17 +670,73 @@ padding:18px;
 
 <body>
 
-<div class="header">
+<!-- HEADER -->
 
-⌨️ تمرین تایپ هوشمند حرفه‌ای
+<header class="header">
+
+<button
+class="menu-btn"
+id="menuBtn">
+
+☰
+
+</button>
+
+⌨️ تمرین تایپ حرفه‌ای
+
+</header>
+
+<!-- OVERLAY -->
+
+<div id="overlay"></div>
+
+<!-- SIDEBAR -->
+
+<aside id="sidebar">
+
+<div class="menu-title">
+
+📋 منو
 
 </div>
 
+<button
+class="menu-item"
+onclick="showPage('practicePage')">
+
+🏠 تمرین تایپ
+
+</button>
+
+<button
+class="menu-item"
+onclick="showPage('managerPage')">
+
+📚 مدیریت جملات
+
+</button>
+
+<button
+class="menu-item"
+onclick="showPage('settingsPage')">
+
+🎯 تنظیم مرحله
+
+</button>
+
+</aside>
+
+<!-- MAIN -->
+
 <div class="container">
 
-<div class="card">
+<!-- PRACTICE -->
 
-<!-- sentence -->
+<section
+id="practicePage"
+class="page active">
+
+<div class="card">
 
 <div
 class="sentence-box"
@@ -500,20 +746,11 @@ id="sentenceDisplay">
 
 </div>
 
-<!-- input -->
-
-<div class="input-wrapper">
-
 <input
 type="text"
 class="user-input"
 id="userInput"
-placeholder="جمله را اینجا تایپ کن..."
-autocomplete="off">
-
-</div>
-
-<!-- buttons -->
+placeholder="جمله را تایپ کن...">
 
 <div class="action-section">
 
@@ -523,7 +760,7 @@ autocomplete="off">
 class="btn btn-check"
 id="checkBtn">
 
-✔ بررسی پاسخ
+✔ بررسی
 
 </button>
 
@@ -541,45 +778,19 @@ id="resetBtn">
 class="btn btn-generate"
 id="generateBtn">
 
-<div class="generate-icon">
-
-✨
-
-</div>
-
-<div class="generate-content">
-
-<span class="generate-title">
-
-دریافت ۵۰ جمله جدید
-
-</span>
-
-<span class="generate-subtitle">
-
-جملات واقعی فارسی از ویکی‌پدیا
-+
-افزایش سختی مرحله‌ها
-
-</span>
-
-</div>
+✨ دریافت ۵۰ جمله جدید
 
 </button>
 
 </div>
 
-<!-- result -->
-
 <div
 class="result"
 id="resultMsg">
 
-👆 جمله را تایپ و بررسی کن
+👆 جمله را تایپ کن
 
 </div>
-
-<!-- info -->
 
 <div class="info">
 
@@ -599,13 +810,93 @@ id="resultMsg">
 
 </div>
 
+</section>
+
+<!-- MANAGER -->
+
+<section
+id="managerPage"
+class="page">
+
+<div class="card">
+
+<div class="page-title">
+
+📚 مدیریت جملات
+
+</div>
+
+<input
+type="text"
+class="search-input"
+id="searchInput"
+placeholder="جستجو در جملات...">
+
+<div class="add-box">
+
+<input
+type="text"
+id="newSentenceInput"
+placeholder="جمله جدید...">
+
+<button
+onclick="addSentence()">
+
+➕
+
+</button>
+
+</div>
+
+<div id="sentenceList"></div>
+
+</div>
+
+</section>
+
+<!-- SETTINGS -->
+
+<section
+id="settingsPage"
+class="page">
+
+<div class="card">
+
+<div class="page-title">
+
+🎯 تنظیم مرحله
+
+</div>
+
+<div class="setting-box">
+
+شماره مرحله را وارد کن
+
+<input
+type="number"
+id="stepInput"
+placeholder="مثلاً 25">
+
+<button
+onclick="jumpToStep()">
+
+رفتن به مرحله
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
 </div>
 
 <script>
 
-/* =========================
+/* =====================
 STORAGE
-========================= */
+===================== */
 
 const STORAGE_KEY =
 "typing_sentences_pro";
@@ -616,9 +907,9 @@ const PROGRESS_KEY =
 const LEVEL_KEY =
 "typing_level_pro";
 
-/* =========================
+/* =====================
 STATE
-========================= */
+===================== */
 
 let sentences = [
 "بابا آب داد",
@@ -630,9 +921,9 @@ let currentIndex = 0;
 
 let generationLevel = 1;
 
-/* =========================
+/* =====================
 ELEMENTS
-========================= */
+===================== */
 
 const sentenceDisplay =
 document.getElementById(
@@ -664,9 +955,9 @@ document.getElementById(
 "generateBtn"
 );
 
-/* =========================
+/* =====================
 SAVE / LOAD
-========================= */
+===================== */
 
 function saveData(){
 
@@ -690,7 +981,9 @@ generationLevel
 function loadData(){
 
 const saved =
-localStorage.getItem(STORAGE_KEY);
+localStorage.getItem(
+STORAGE_KEY
+);
 
 if(saved){
 
@@ -700,7 +993,9 @@ JSON.parse(saved);
 }
 
 const savedProgress =
-localStorage.getItem(PROGRESS_KEY);
+localStorage.getItem(
+PROGRESS_KEY
+);
 
 if(savedProgress){
 
@@ -710,7 +1005,9 @@ parseInt(savedProgress);
 }
 
 const savedLevel =
-localStorage.getItem(LEVEL_KEY);
+localStorage.getItem(
+LEVEL_KEY
+);
 
 if(savedLevel){
 
@@ -721,9 +1018,9 @@ parseInt(savedLevel);
 
 }
 
-/* =========================
+/* =====================
 UI
-========================= */
+===================== */
 
 function updateUI(){
 
@@ -741,9 +1038,9 @@ userInput.value = "";
 
 }
 
-/* =========================
+/* =====================
 CHECK
-========================= */
+===================== */
 
 function checkAnswer(){
 
@@ -769,14 +1066,16 @@ if(
 currentIndex >=
 sentences.length
 ){
+
 currentIndex = 0;
+
 }
 
 saveData();
 
 updateUI();
 
-},1200);
+},1000);
 
 }else{
 
@@ -792,9 +1091,9 @@ resultMsg.style.background =
 
 }
 
-/* =========================
+/* =====================
 RESET
-========================= */
+===================== */
 
 function resetProgress(){
 
@@ -804,61 +1103,47 @@ saveData();
 
 updateUI();
 
-resultMsg.innerHTML =
-"🔄 از ابتدا شروع شد";
-
-resultMsg.style.background =
-"#eef4ff";
-
 }
 
-/* =========================
-FETCH REAL SENTENCES
-========================= */
+/* =====================
+GENERATE
+===================== */
 
 async function generateNewSentences(){
 
 generateBtn.disabled = true;
 
 resultMsg.innerHTML =
-"🌐 درحال دریافت جملات واقعی...";
-
-resultMsg.style.background =
-"#eef4ff";
+"🌐 درحال دریافت جملات...";
 
 try{
 
 let newSentences = [];
 
-/* 5 درخواست پایدار */
 for(let i=0;i<5;i++){
 
-const response = await fetch(
-
+const response =
+await fetch(
 "https://fa.wikipedia.org/w/api.php?action=query&generator=random&grnnamespace=0&prop=extracts&explaintext=1&exsentences=10&format=json&origin=*"
-
 );
 
 const data =
 await response.json();
 
-if(
-data.query &&
-data.query.pages
-){
-
 const pages =
-Object.values(
-data.query.pages
-);
+data?.query?.pages;
 
-pages.forEach(page=>{
+if(!pages) continue;
 
-if(page.extract){
+Object.values(pages)
+.forEach(page=>{
+
+if(!page.extract) return;
 
 const parts =
 page.extract
-.split(/[.!؟\n]/);
+.replace(/\n/g," ")
+.split(/[.!؟]/);
 
 parts.forEach(p=>{
 
@@ -876,24 +1161,18 @@ newSentences.push(text);
 
 });
 
-}
-
 });
 
 }
 
-}
-
-/* حذف تکراری */
 newSentences =
 [...new Set(newSentences)];
 
-/* افزایش سختی */
 if(generationLevel >= 3){
 
 newSentences =
 newSentences.filter(
-s => s.length > 50
+s=>s.length>50
 );
 
 }
@@ -902,36 +1181,14 @@ if(generationLevel >= 5){
 
 newSentences =
 newSentences.filter(
-s => s.length > 80
+s=>s.length>80
 );
 
 }
 
-/* محدودیت 50 */
 newSentences =
 newSentences.slice(0,50);
 
-/* fallback */
-
-if(newSentences.length === 0){
-
-newSentences = [
-
-"هوش مصنوعی آینده فناوری را متحول خواهد کرد",
-
-"برنامه نویسی مهارتی ارزشمند برای آینده است",
-
-"تمرین مستمر موجب پیشرفت انسان می‌شود",
-
-"یادگیری عمیق یکی از شاخه‌های مهم هوش مصنوعی است",
-
-"مدیریت زمان کیفیت زندگی را افزایش می‌دهد"
-
-];
-
-}
-
-/* انباشت */
 sentences.push(
 ...newSentences
 );
@@ -941,8 +1198,7 @@ generationLevel++;
 saveData();
 
 resultMsg.innerHTML =
-`🚀
-${newSentences.length}
+`🚀 ${newSentences.length}
 جمله جدید اضافه شد`;
 
 resultMsg.style.background =
@@ -950,12 +1206,12 @@ resultMsg.style.background =
 
 updateUI();
 
-}catch(error){
+}catch(err){
 
-console.error(error);
+console.error(err);
 
 resultMsg.innerHTML =
-"❌ خطا در اتصال به ویکی‌پدیا";
+"❌ خطا در دریافت";
 
 resultMsg.style.background =
 "#ffe3e3";
@@ -966,9 +1222,266 @@ generateBtn.disabled = false;
 
 }
 
-/* =========================
+/* =====================
+PAGES
+===================== */
+
+function showPage(id){
+
+document
+.querySelectorAll(".page")
+.forEach(p=>{
+
+p.classList.remove(
+"active"
+);
+
+});
+
+document
+.getElementById(id)
+.classList.add("active");
+
+closeMenu();
+
+if(id==="managerPage"){
+
+renderSentenceList();
+
+}
+
+}
+
+/* =====================
+MENU
+===================== */
+
+const sidebar =
+document.getElementById(
+"sidebar"
+);
+
+const overlay =
+document.getElementById(
+"overlay"
+);
+
+document
+.getElementById("menuBtn")
+.addEventListener(
+"click",
+()=>{
+
+sidebar.classList.add(
+"show"
+);
+
+overlay.classList.add(
+"show"
+);
+
+}
+);
+
+overlay.addEventListener(
+"click",
+closeMenu
+);
+
+function closeMenu(){
+
+sidebar.classList.remove(
+"show"
+);
+
+overlay.classList.remove(
+"show"
+);
+
+}
+
+/* =====================
+MANAGER
+===================== */
+
+function renderSentenceList(){
+
+const list =
+document.getElementById(
+"sentenceList"
+);
+
+const search =
+document
+.getElementById(
+"searchInput"
+)
+.value
+.trim();
+
+list.innerHTML = "";
+
+sentences
+.filter(s=>s.includes(search))
+.forEach((sentence,index)=>{
+
+const item =
+document.createElement("div");
+
+item.className =
+"sentence-item";
+
+item.innerHTML = `
+
+<div class="sentence-text">
+
+${sentence}
+
+</div>
+
+<div class="sentence-actions">
+
+<button
+class="action-btn edit-btn"
+onclick="editSentence(${index})">
+
+✏️ ویرایش
+
+</button>
+
+<button
+class="action-btn delete-btn"
+onclick="deleteSentence(${index})">
+
+🗑 حذف
+
+</button>
+
+</div>
+
+`;
+
+list.appendChild(item);
+
+});
+
+}
+
+document
+.getElementById("searchInput")
+.addEventListener(
+"input",
+renderSentenceList
+);
+
+function addSentence(){
+
+const input =
+document.getElementById(
+"newSentenceInput"
+);
+
+const text =
+input.value.trim();
+
+if(!text) return;
+
+sentences.push(text);
+
+saveData();
+
+renderSentenceList();
+
+input.value = "";
+
+}
+
+function editSentence(index){
+
+const updated =
+prompt(
+"ویرایش جمله:",
+sentences[index]
+);
+
+if(updated){
+
+sentences[index] =
+updated;
+
+saveData();
+
+renderSentenceList();
+
+updateUI();
+
+}
+
+}
+
+function deleteSentence(index){
+
+if(
+confirm(
+"حذف شود؟"
+)
+){
+
+sentences.splice(index,1);
+
+saveData();
+
+renderSentenceList();
+
+updateUI();
+
+}
+
+}
+
+/* =====================
+STEP SETTINGS
+===================== */
+
+function jumpToStep(){
+
+const step =
+parseInt(
+document.getElementById(
+"stepInput"
+).value
+);
+
+if(
+isNaN(step) ||
+step < 1 ||
+step > sentences.length
+){
+
+alert(
+"شماره نامعتبر است"
+);
+
+return;
+
+}
+
+currentIndex =
+step - 1;
+
+saveData();
+
+updateUI();
+
+showPage(
+"practicePage"
+);
+
+}
+
+/* =====================
 EVENTS
-========================= */
+===================== */
 
 document
 .getElementById("checkBtn")
@@ -994,7 +1507,7 @@ userInput.addEventListener(
 "keypress",
 e=>{
 
-if(e.key === "Enter"){
+if(e.key==="Enter"){
 
 checkAnswer();
 
@@ -1003,9 +1516,9 @@ checkAnswer();
 }
 );
 
-/* =========================
+/* =====================
 START
-========================= */
+===================== */
 
 loadData();
 
